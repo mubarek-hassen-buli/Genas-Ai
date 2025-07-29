@@ -1,7 +1,20 @@
-import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { Music, Image, MessageCircle, Users, Search, MoreHorizontal, Check } from 'lucide-react-native';
-import { useTheme } from '@/components/ThemeProvider';
+/// <reference types="../types/svg" />
+import React from "react";
+import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import {
+  Music,
+  Image,
+  MessageCircle,
+  Users,
+  Search,
+  MoreHorizontal,
+  Check,
+} from "lucide-react-native";
+import { useTheme } from "@/components/ThemeProvider";
+import SvgTiktok from "../assets/svg/tiktok-fill.svg";
+import SvgInstagram from "../assets/svg/instagram-line.svg";
+import SvgTelegram from "../assets/svg/telegram-fill.svg";
+import SvgGoogle from "../assets/svg/google-fill.svg";
 
 interface SourceOptionProps {
   icon: string;
@@ -10,22 +23,27 @@ interface SourceOptionProps {
   selected?: boolean;
 }
 
-const SourceOption = ({ icon, title, onPress, selected = false }: SourceOptionProps) => {
+const SourceOption = ({
+  icon,
+  title,
+  onPress,
+  selected = false,
+}: SourceOptionProps) => {
   const { colors } = useTheme();
-  
+
   const renderIcon = () => {
     switch (icon) {
-      case 'brand-tiktok':
-        return <Music size={24} color={colors.text} />;
-      case 'brand-instagram':
-        return <Image size={24} color={colors.text} />;
-      case 'brand-telegram':
-        return <MessageCircle size={24} color={colors.text} />;
-      case 'users':
+      case "brand-tiktok":
+        return <SvgTiktok width={24} height={24} />;
+      case "brand-instagram":
+        return <SvgInstagram width={24} height={24} />;
+      case "brand-telegram":
+        return <SvgTelegram width={24} height={24} />;
+      case "brand-google":
+        return <SvgGoogle width={24} height={24} />;
+      case "users":
         return <Users size={24} color={colors.text} />;
-      case 'brand-google':
-        return <Search size={24} color={colors.text} />;
-      case 'dots-horizontal':
+      case "dots-horizontal":
         return <MoreHorizontal size={24} color={colors.text} />;
       default:
         return <MoreHorizontal size={24} color={colors.text} />;
@@ -33,21 +51,25 @@ const SourceOption = ({ icon, title, onPress, selected = false }: SourceOptionPr
   };
 
   return (
-    <TouchableOpacity 
+    <TouchableOpacity
       style={[
-        styles.container, 
+        styles.container,
         { backgroundColor: colors.cardBackground },
-        selected && { borderColor: colors.primary, borderWidth: 2 }
-      ]} 
-      onPress={onPress} 
+        selected && { borderColor: colors.primary, borderWidth: 2 },
+      ]}
+      onPress={onPress}
       activeOpacity={0.7}
     >
-      <View style={[styles.iconContainer, { backgroundColor: colors.background }]}>
+      <View
+        style={[styles.iconContainer, { backgroundColor: colors.background }]}
+      >
         {renderIcon()}
       </View>
       <Text style={[styles.title, { color: colors.text }]}>{title}</Text>
       {selected && (
-        <View style={[styles.checkContainer, { backgroundColor: colors.primary }]}>
+        <View
+          style={[styles.checkContainer, { backgroundColor: colors.primary }]}
+        >
           <Check size={16} color="#FFFFFF" />
         </View>
       )}
@@ -57,19 +79,19 @@ const SourceOption = ({ icon, title, onPress, selected = false }: SourceOptionPr
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
-    position: 'relative',
+    position: "relative",
   },
   iconContainer: {
     width: 40,
     height: 40,
     borderRadius: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     marginRight: 12,
   },
   title: {
@@ -80,8 +102,8 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
     borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
 
