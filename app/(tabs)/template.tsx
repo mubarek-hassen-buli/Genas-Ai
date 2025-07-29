@@ -84,7 +84,7 @@ export default function TemplateScreen() {
               type={template.type}
               image={template.image}
               onPress={() => handleTemplatePress(template.id)}
-              onPreview={() => handleTemplatePreview(template.id)}
+              // onPreview={() => handleTemplatePreview(template.id)}
             />
           ))}
         </View>

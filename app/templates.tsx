@@ -78,7 +78,7 @@ export default function TemplatesScreen() {
               key={tab}
               style={[
                 styles.tab,
-                activeTab === tab && [styles.activeTab, { backgroundColor: colors.primary }]
+                activeTab === tab ? { ...styles.activeTab, backgroundColor: colors.primary } : null
               ]}
               onPress={() => setActiveTab(tab)}
             >

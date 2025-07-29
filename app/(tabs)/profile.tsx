@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity, Alert } from 'react-native';
 import { router } from 'expo-router';
 import { User, Lock, Globe, Moon, Bell, Crown, LogOut } from 'lucide-react-native';
-import SettingsItem from '@/components/SettingsItem';
+import SettingsItem from '@/components/SettingItem';
 import Switch from '@/components/Switch';
 import { useTheme } from '@/components/ThemeProvider';
 import { useThemeStore } from '@/hooks/useThemeStore';

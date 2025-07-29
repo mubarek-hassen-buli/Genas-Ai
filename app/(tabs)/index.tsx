@@ -119,7 +119,7 @@ export default function HomeScreen() {
               type={template.type}
               image={template.image}
               onPress={() => handleTemplatePress(template.id)}
-              onPreview={() => handleTemplatePreview(template.id)}
+              // Remove onPreview prop since it's not defined in TemplateCardProps
             />
           ))}
         </View>

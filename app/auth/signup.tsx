@@ -99,7 +99,7 @@ export default function SignupScreen() {
             title="Continue with Google"
             onPress={handleGoogleSignup}
             style={styles.googleButton}
-            textStyle={[styles.socialButtonText, { color: colors.text }]}
+            textStyle={{ ...styles.socialButtonText, color: colors.text }}
             variant="outline"
           />
 
@@ -107,7 +107,7 @@ export default function SignupScreen() {
             title="Continue with Apple"
             onPress={handleAppleSignup}
             style={styles.appleButton}
-            textStyle={[styles.socialButtonText, { color: colors.text }]}
+            textStyle={{ ...styles.socialButtonText, color: colors.text }}
             variant="outline"
           />
         </View>

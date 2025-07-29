@@ -92,7 +92,7 @@ export default function LoginScreen() {
             title="Continue with Google"
             onPress={handleGoogleLogin}
             style={styles.googleButton}
-            textStyle={[styles.socialButtonText, { color: colors.text }]}
+            textStyle={{ ...styles.socialButtonText, color: colors.text }}
             variant="outline"
           />
 
@@ -100,7 +100,7 @@ export default function LoginScreen() {
             title="Continue with Apple"
             onPress={handleAppleLogin}
             style={styles.appleButton}
-            textStyle={[styles.socialButtonText, { color: colors.text }]}
+            textStyle={{ ...styles.socialButtonText, color: colors.text }}
             variant="outline"
           />
         </View>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import Colors from '@/constants/colors';
+import Colors from '@/constants/Colors';
 import { useTheme } from '@/components/ThemeProvider';
 
 interface TemplateCardProps {
